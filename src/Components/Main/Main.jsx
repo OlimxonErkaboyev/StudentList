@@ -72,7 +72,7 @@ const Main = () => {
         const data = await res.json();
         getStudents();
         setModal(false);
-        toast.success("Muvaffaqiyatli o'zgartirildi");
+        toast.success("Muvaffaqiyatli qo'shildi");
       } catch (error) {
         toast.error(error.message);
         console.log(error.message);
@@ -179,27 +179,34 @@ const Main = () => {
               className='form-control mb-3'
               type='text'
               name='firstname'
+              defaultValue={selectedItem?.firstname}
               placeholder='Enter your Firstname'
             />
             <Input
               className='form-control mb-3'
               type='text'
               name='lastname'
+              defaultValue={selectedItem?.lastname}
               placeholder='Enter your Lastname'
             />
             <Input
               className='form-control mb-3'
               type='number'
               name='kurs'
+              defaultValue={selectedItem?.kurs}
               placeholder='Nechanchi kurssiz'
             />
             <Input
               className='form-control mb-3'
               type='text'
               name='fakultet'
+              defaultValue={selectedItem?.fakultet}
               placeholder='Fakultetingiz nomi'
             />
-            <select className='form-select mb-3' name='oqishturi'>
+            <select
+              className='form-select mb-3'
+              name='oqishturi'
+              defaultValue={selectedItem?.oqishturi}>
               <option hidden selected>
                 Grand yoki Kontrakt
               </option>
@@ -210,6 +217,7 @@ const Main = () => {
               className='form-control mb-3'
               type='number'
               name='guruh'
+              defaultValue={selectedItem?.guruh}
               placeholder='Nechanchi guruhsiz'
             />
             <div className='d-flex flex-column'>
@@ -221,6 +229,7 @@ const Main = () => {
                     type='radio'
                     name='isMerried'
                     value='Boydoq'
+                    defaultValue={selectedItem?.isMerried}
                     checked={selectRadio === "Boydoq"}
                     onChange={handleRadioChange}
                   />
@@ -232,6 +241,7 @@ const Main = () => {
                     type='radio'
                     name='isMerried'
                     value='Oilali'
+                    defaultValue={selectedItem?.isMerried}
                     checked={selectRadio === "Oilali"}
                     onChange={handleRadioChange}
                   />
@@ -243,6 +253,7 @@ const Main = () => {
                     type='radio'
                     name='isMerried'
                     value='Ajrashgan'
+                    defaultValue={selectedItem?.isMerried}
                     checked={selectRadio === "Ajrashgan"}
                     onChange={handleRadioChange}
                   />
