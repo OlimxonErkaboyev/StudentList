@@ -2,8 +2,6 @@ import { Routes, Route, Link } from "react-router-dom";
 import "./App.scss";
 import Header from "./Components/Header/Header";
 import Main from "./Components/Main/Main";
-import MyForm from "./Components/form";
-
 function App() {
   return (
     <>
